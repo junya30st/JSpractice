@@ -41,6 +41,7 @@ const $button = document.getElementsByTagName('button')
 // $button[0].textContent = answers[0];
 // $button[1].textContent = answers[1];
 // $button[2].textContent = answers[2];
+
 const setupQuiz = () => {
   document.getElementById('js-question').textContent = quiz[quizIndex].question ;
   let buttonIndex = 0;
