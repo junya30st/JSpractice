@@ -26,6 +26,8 @@ const setupQuiz = () => {
 
 setupQuiz();
 
+const clickHandler = 
+
 $button[0].addEventListener('click', () =>{
   if (correct === $button[0].textContent){
     window.alert('正解');
