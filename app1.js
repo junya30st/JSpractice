@@ -28,7 +28,6 @@ let quiz = [
   }
 ]
 
-let quizIndex = 0
 // let question = "私は何歳でしょう？"
 // let answers = [
 //   '28歳',
@@ -36,8 +35,12 @@ let quizIndex = 0
 //   "31歳"
 // ]
 // const correct = "31歳"
-const $button = document.getElementsByTagName('button')
-const buttonLength = $button.length
+
+let quizIndex = 0;
+let score = 0;
+const quizLength = quiz.length;
+const $button = document.getElementsByTagName('button');
+const buttonLength = $button.length;
 // htmlへの代入を全て関数化する
 const setupQuiz = () => {
   document.getElementById('js-question').textContent = quiz[quizIndex].question;
@@ -53,8 +56,17 @@ setupQuiz();
 const clickHandler = (e) => {
   if (quiz[quizIndex].correct === e.target.textContent){
     window.alert('正解');
+    score++;
   } else {
     window.alert('不正解');
+  }
+
+  quizIndex++;
+
+  if (quizIndex < quizLength){
+    setupQuiz();
+  } else {
+    window.alert('終了。あなたの正解数は'+ score + 'です')
   }
 };
 
